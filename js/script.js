@@ -115,14 +115,11 @@ function buildAndShowHomeHTML (categories) {
       // Hint: you need to surround the chosen category short name with something before inserting
       // it into the home html snippet.
       //
-      $ajaxUtils.sendGetRequest(
-      categoryHTML, 
-        function(categoryHTML){
-          
-      var homeHtmlToInsertIntoMainPage = insertProperty('chosenCategoryShortName', homeHTML, categoryHTML);
+    
+      var homeHtmlToInsertIntoMainPage = insertProperty('chosenCategoryShortName', homeHtml, homeHtmlUrl);
           insertHTML("#main-content",homeHtmlToInsertIntoMainPage);
         },
-        false);
+    
 
 
       // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
@@ -130,7 +127,6 @@ function buildAndShowHomeHTML (categories) {
       // of how to do that.
       // ....
 
-    },
     false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
 }
 
